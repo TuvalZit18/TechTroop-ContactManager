@@ -1,5 +1,27 @@
 {
   "dependencies": {
     "jest": "^30.4.2"
+  },
+  "type": "module", 
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "jest": { 
+    "transform": {}, 
+    "testEnvironment": "node", 
+    "collectCoverageFrom": [ 
+      "utils/validation.js", 
+      "utils/fileUtils.js", 
+      "services/contactService.js", 
+      "commands/commandHandler.js" 
+    ], 
+    "coverageThreshold": { 
+      "global": { 
+        "branches": 90, 
+        "functions": 90, 
+        "lines": 90, 
+        "statements": 90 
+      } 
+    } 
   }
 }
